@@ -1,19 +1,20 @@
 # frozen-string-literal: true
 
+# Module implementing merge sort
 module MergeSort
-########### Start of merge sort solution ###########
+  ########### Start of merge sort solution ###########
 
   # Merge sort using recursion
   def atomise(list)
     return list if list.size < 2
 
-    puts "Splitting... \e[33m#{list}\e[0m"
+    puts "Splitting... \e[93m#{list}\e[0m"
     half = list.size / 2
     left_side = atomise(list.slice(0...half))
     right_side = atomise(list.slice(half..-1))
     puts "Left: \e[31m#{left_side}\e[0m\nRight: \e[94m#{right_side}\e[0m"
     puts "'''''''''''''''''''''"
-    system('sleep .5')
+    system('sleep .42')
     merge_sort(left_side, right_side)
   end
 
@@ -61,7 +62,7 @@ module MergeSort
     lst = if response == 'y'
             len = select_len
             max = select_max
-            Array.new(len) { max }
+            Array.new(len) { rand(max) }
           else
             Array.new(rand(31) + 1) { rand(104) }
           end

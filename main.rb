@@ -42,7 +42,7 @@ class Main
   def start
     select_program == '1' ? Fibonacci.new : choose
     loop do
-      puts 'To run from the beginning enter y, anything else will end the program'
+      puts 'To run the main program from the beginning enter y, anything else will end the program'
       continue = gets.chomp
       break unless continue == 'y'
 
